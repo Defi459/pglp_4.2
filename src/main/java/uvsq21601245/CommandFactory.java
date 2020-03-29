@@ -21,6 +21,18 @@ public class CommandFactory {
         }
     }
 
+    public void executeOperation(MoteurRPN moteur, Operation op){
+        CommandOperation tmp;
+        tmp = new CommandOperation(moteur,op);
+        tmp.apply();
+    }
+
+    public void executeRegister(MoteurRPN moteur, Double value){
+        CommandRegister tmp;
+        tmp = new CommandRegister(moteur, value);
+        tmp.apply();
+    }
+
     public void init(MoteurRPN moteur){
 
         this.addCommand("undo", new CommandUndo(moteur));

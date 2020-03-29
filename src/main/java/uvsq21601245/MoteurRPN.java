@@ -36,4 +36,8 @@ public class MoteurRPN extends Interpreteur{
         return this.actual.pop();
     }
 
+    public boolean emptyTest(){
+        return this.actual.isEmpty();
+    }
+
 }
