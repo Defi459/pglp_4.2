@@ -28,7 +28,13 @@ public class SaisieRPN {
 
         if (token.equals("exit")){
             command.executeCommand("returnall");
+            command.executeCommand("quit");
             return 0;
+        }
+        if (token.equals("undo")){
+            command.executeCommand("undo");
+            command.executeCommand("returnall");
+            return 1;
         }
         else{
             if (Pattern.matches("(\\+|\\-|\\*|\\/)",token)){

@@ -10,12 +10,12 @@ public class MoteurRPN extends Interpreteur{
     }
 
     public void enregistrer(Double value){
-        this.old = this.actual;
+        this.old = (Stack<Double>)this.actual.clone();
         this.actual.push(value);
     }
 
     public void operation(Operation operation){
-        this.old = this.actual;
+        this.old =(Stack<Double>) this.actual.clone();
         Double op2=this.actual.pop();
         Double op1=this.actual.pop();
         if(operation.get_symbole()=="/" && op2==0.0){

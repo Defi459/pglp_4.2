@@ -14,7 +14,7 @@ public class Interpreteur
     }
 
     public void undo(){
-        actual = old;
+        actual = (Stack<Double>)old.clone();
     }
 
     public void quit(){
