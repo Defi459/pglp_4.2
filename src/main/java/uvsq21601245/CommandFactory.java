@@ -7,7 +7,7 @@ public class CommandFactory {
 
     private final Map<String, Command> commands;
 
-    private  CommandFactory(){
+    public  CommandFactory(){
         this.commands = new HashMap<>();
     }
 
@@ -21,9 +21,13 @@ public class CommandFactory {
         }
     }
 
-    public void init(Interpreteur inter){
-        this.addCommand("undo", new CommandUndo(inter));
-        this.addCommand("quit", new CommandQuit(inter));
+    public void init(MoteurRPN moteur){
+
+        this.addCommand("undo", new CommandUndo(moteur));
+        this.addCommand("quit", new CommandQuit(moteur));
+        this.addCommand("operation", new CommandOperation(moteur,Operation.DIV));
+        this.addCommand("register", new CommandRegister(moteur, 0.0));
+        this.addCommand("returnall", new CommandReturnall(moteur));
     }
 
 }

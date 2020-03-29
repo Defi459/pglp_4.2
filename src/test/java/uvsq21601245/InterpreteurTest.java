@@ -18,5 +18,5 @@ public class InterpreteurTest
         inter.undo();
         assertEquals(2.0,inter.actual.pop(),0.000001);
     }
-    
+
 }
