@@ -1,13 +1,24 @@
 package uvsq21601245;
 
-/**
- * Hello world!
- *
- */
+
+import java.util.Stack;
+
 public class Interpreteur
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public Stack<Double> actual;
+    public Stack<Double> old;
+
+    public Interpreteur(){
+        this.actual = new Stack<Double>();
+        this.old = new Stack<Double>();
+    }
+
+    public void undo(){
+        actual = old;
+    }
+
+    public void quit(){
+        System.out.print("Fin du programme");
+        System.exit(0);
     }
 }
