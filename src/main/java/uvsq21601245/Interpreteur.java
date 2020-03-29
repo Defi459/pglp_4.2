@@ -4,7 +4,7 @@ package uvsq21601245;
  * Hello world!
  *
  */
-public class App 
+public class Interpreteur
 {
     public static void main( String[] args )
     {
